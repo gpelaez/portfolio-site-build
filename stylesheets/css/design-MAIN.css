@@ -1,0 +1,353 @@
+/*********************************************************************************/
+/*********************************************************************************/
+/*********************************************************************************/
+/*					  DIAGONAL GRADIENT LESS		     */
+/*********************************************************************************/
+/*********************************************************************************/
+/*********************************************************************************/
+html,
+body {
+  margin: 0;
+  padding: 0;
+  z-index: -1000;
+  background: ;
+}
+.radical {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  /* clips what is hanging off of left-side and right-side */
+
+}
+.radical > .left,
+.radical > .right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  -moz-transform: skewx(-25deg);
+  -webkit-transform: skewx(-25deg);
+  -o-transform: skewx(-25deg);
+  -ms-transform: skewx(-25deg);
+  /* IE 9 */
+
+}
+.left {
+  left: -50%;
+  /* go off the edge as much as half the viewport width */
+
+  right: 50%;
+  background-color: #edeeee;
+  /* define color for left side of split diag gradient */
+
+}
+.right {
+  left: 49.9%;
+  /* gotta be slightly under 50 to avoid aliasing */
+
+  right: -50%;
+  /* go off the edge as much as half the viewport width */
+
+  background-color: #f5f5f6;
+  /* define the RIGHT side of the gradient */
+
+}
+.radial {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.3;
+  background: -webkit-radial-gradient(center, circle cover, #ffffff 100%, #000000 100%);
+}
+.radical > .content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  padding: 16px;
+  color: #ccc;
+  text-shadow: 0 1px 1px #000;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+/*								***when hovering over page, show content
+.radical:hover > .content
+{
+    opacity: 1;
+}
+*/
+/*********************************************************************************/
+/*********************************************************************************/
+/*********************************************************************************/
+/*								GALLERY CSS										*/
+/*********************************************************************************/
+/*********************************************************************************/
+/*********************************************************************************/
+body {
+  margin: 0;
+  padding: 0;
+  z-index: -1000;
+  background: ;
+}
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-top: 20px;
+}
+#slide-container {
+  position: fixed;
+  top: 20px;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  margin: auto;
+}
+#slide-container-inner {
+  position: relative;
+  height: 100%;
+  width: 99999999px;
+}
+.slide {
+  text-align: center;
+  float: left;
+  height: 100%;
+  overflow: hidden;
+}
+/* This value holds the maximum width of each individual slide */
+/* Change this and the JavaScript slide manager will pick it up
+   automatically and use it */
+#slide-container,
+.slide {
+  width: 940px;
+}
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.35);
+}
+.slide#logo-slide img {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.slide video,
+.slide embed {
+  width: 100%;
+  height: 100%;
+  /* Force this above the navigation divs otherwise we can't use the video controls */
+
+  position: relative;
+  z-index: 100001;
+}
+/*when hovering over the left side of the page, trigger the left arrow*/
+#nav-left {
+  top: 40%;
+  left: 0;
+  width: 35%;
+  position: fixed;
+  z-index: 50000;
+  background: blue;
+  width: 60px;
+  height: 60px;
+  color: grey;
+  text-align: center;
+  font-size: 300%;
+  font-family: 'majoramregular';
+  background-color: #040506;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#2f2f30), to(#040506));
+  background-image: -webkit-linear-gradient(top, #2f2f30, #040506);
+  background-image: -moz-linear-gradient(top, #2f2f30, #040506);
+  background-image: -o-linear-gradient(top, #2f2f30, #040506);
+  background-image: -ms-linear-gradient(top, #2f2f30, #040506);
+  background-image: linear-gradient(top, #2f2f30, #040506);
+}
+#go-left {
+  text-decoration: none;
+}
+#go-right {
+  text-decoration: none;
+}
+/*when hovering over the middle of the page, trigger the squares 
+#nav-middle{
+	top:40%;
+	left:35%;
+	right:35%;
+	width:30%;
+	position:fixed;
+	z-index:50000;
+}*/
+/*when hovering over the right side of the page, trigger the right arrow */
+#nav-right {
+  top: 40%;
+  right: 0;
+  width: 35%;
+  position: fixed;
+  z-index: 50000;
+  background: red;
+  width: 60px;
+  height: 60px;
+  color: grey;
+  text-align: center;
+  font-size: 300%;
+  font-family: 'majoramregular';
+  background-color: #040506;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#2f2f30), to(#040506));
+  background-image: -webkit-linear-gradient(top, #2f2f30, #040506);
+  background-image: -moz-linear-gradient(top, #2f2f30, #040506);
+  background-image: -o-linear-gradient(top, #2f2f30, #040506);
+  background-image: -ms-linear-gradient(top, #2f2f30, #040506);
+  background-image: linear-gradient(top, #2f2f30, #040506);
+}
+#slide-container,
+#nav-left,
+#nav-right,
+#nav-middle {
+  bottom: 184px;
+  /*144px for footer height +40 px*/
+
+}
+/*gallery of portfolio thumbnails*/
+#thumbnail-gallery {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  left: 20px;
+  bottom: 20px;
+  border: 1px solid white;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 60000;
+  overflow: scroll;
+  display: none;
+}
+/*fade-in contact info window*/
+#contact-info {
+  position: fixed;
+  top: 160px;
+  right: 20px;
+  left: 20px;
+  bottom: 220px;
+  border: 1px solid grey;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 60000;
+  overflow: scroll;
+  display: none;
+  -moz-box-shadow: 5px 5px 5px 5px black;
+  -webkit-box-shadow: 5px 5px 5px 5px black;
+  box-shadow: 5px 5px 5px 5px black;
+}
+/*fade-in resume info window*/
+#resume-info {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  left: 20px;
+  bottom: 20px;
+  border: 1px solid grey;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 60000;
+  overflow: scroll;
+  display: none;
+  -moz-box-shadow: 5px 5px 5px 5px black;
+  -webkit-box-shadow: 5px 5px 5px 5px black;
+  box-shadow: 5px 5px 5px 5px black;
+}
+.thumbnail {
+  width: 180px;
+  height: 180px;
+  margin: 16px;
+  display: inline-block;
+}
+/* Horizontal Line above Nav */
+#nav-line {
+  margin: auto;
+  color: white;
+  opacity: 0.3;
+  width: 100%;
+  padding: 0;
+  position: relative;
+}
+#main-nav {
+  font-family: 'abeatbykairegular';
+  color: #979797;
+  font-size: 60%;
+  padding-bottom: 35px;
+  padding-top: 27px;
+  letter-spacing: 5px;
+  width: 100%;
+  background-color: #040506;
+  background-image: -webkit-gradient(linear, left top, right top, from(#2f2f30), to(#040506));
+  background-image: -webkit-linear-gradient(left, #2f2f30, #040506);
+  background-image: -moz-linear-gradient(left, #2f2f30, #040506);
+  background-image: -o-linear-gradient(left, #2f2f30, #040506);
+  background-image: -ms-linear-gradient(top, #2f2f30, #040506);
+  background-image: linear-gradient(left, #2f2f30, #040506);
+  /*gradient mixin made below*/
+
+}
+ul#main-menu a {
+  text-decoration: none;
+}
+ul#main-menu {
+  list-style: none;
+  margin: 0;
+  float: left;
+  padding: 0;
+}
+ul#main-menu li {
+  display: inline;
+  margin-left: 30px;
+  margin-right: 30px;
+  color: #d5d5d5;
+}
+/*Phone Number*/
+#phone-number {
+  float: right;
+  padding-right: 20px;
+  font-family: 'Century Gothic';
+  color: #b8b8b8;
+}
+/*gradient for Main Navt*/
+/*Gradient for Left Nav Box*/
+/*Gradient for Right Nav Box*/
+a:link {
+  color: #a8a8a8;
+}
+/* unvisited link */
+a:visited {
+  color: #a8a8a8;
+}
+/* visited link */
+a:hover {
+  color: white;
+}
+/* mouse over link */
+a:active {
+  color: #a8a8a8;
+}
+/* selected link */
+@font-face {
+  font-family: 'abeatbykairegular';
+  src: url('Kai/abeatbykai-webfont.eot');
+  src: url('Kai/abeatbykai-webfont.eot?#iefix') format('embedded-opentype'), url('Kai/abeatbykai-webfont.woff') format('woff'), url('Kai/abeatbykai-webfont.ttf') format('truetype'), url('Kai/abeatbykai-webfont.svg#abeatbykairegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'majoramregular';
+  src: url('Majoram/majoram-webfont.eot');
+  src: url('Majoram/majoram-webfont.eot?#iefix') format('embedded-opentype'), url('Majoram/majoram-webfont.woff') format('woff'), url('Majoram/majoram-webfont.ttf') format('truetype'), url('Majoram/majoram-webfont.svg#majoramregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

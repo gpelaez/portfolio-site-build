@@ -1,0 +1,75 @@
+html, body
+{
+    margin: 0;
+    padding: 0;
+}
+
+.radical
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden; /* clips what is hanging off of left-side and right-side */
+}
+
+.radical > .left, .radical > .right
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+	-webkit-transform: skewX(-30deg);
+}
+
+.left
+{
+	left: -50%; /* go off the edge as much as half the viewport width */
+	right: 50%;
+	background-color: #080b0a;
+}
+
+.right
+{
+	left: 49.9%; /* gotta be slightly under 50 to avoid aliasing */
+	right: -50%; /* go off the edge as much as half the viewport width */
+	background-color: #0e1112;
+}
+
+.radial
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.3;
+   	background: -webkit-radial-gradient(center, circle cover, rgb(50, 56, 54) 0%, rgb(0, 0, 0) 100%);
+}
+
+.radical > .content
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    padding: 16px;
+    color: #ccc;
+    text-shadow: 0 1px 1px #000;
+    opacity: 0;
+
+    transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+}
+
+/*								***when hovering over page, show content
+.radical:hover > .content
+{
+    opacity: 1;
+}
+*/
